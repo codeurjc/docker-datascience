@@ -1,14 +1,19 @@
 message("Sample Script in R")
-message("\t==> Creating cars and trucks arrays")
+message("Creating cars and trucks arrays...")
 
 # Create cars and trucks arrays
 cars <- c(1, 3, 6, 4, 9)
 trucks <- c(2, 5, 4, 5, 12)
 
-message("\t==> Creating plot using the cars and trucks arrays")
+message("Creating plot using the cars and trucks arrays...")
+
+# Create output folder
+if (!dir.exists("/output")) {
+    dir.create("/output")
+}
 
 # Open a png file
-png(filename="plot.png")
+png(filename="/output/plot.png")
 
 # Create a plot
 plot(cars, type="o", col="blue", ylim=c(0,12))
