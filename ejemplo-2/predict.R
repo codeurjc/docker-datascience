@@ -11,17 +11,21 @@ input <- data.frame(
 )
 
 # Train the model if it does not exist previously
-if (!file.exists("iris_clf_rf.rds")){
+if (!file.exists("model/iris_clf_rf.rds")){
   message('Training model...')
   
   clf_rf <- randomForest(Species ~ ., data = iris)
   
-  saveRDS(clf_rf, 'iris_clf_rf.rds')
+  if (!dir.exists("model")) {
+    dir.create("model")
+  }
+
+  saveRDS(clf_rf, 'model/iris_clf_rf.rds')
 
 # Load the trained model
 } else {
   message('Reading model...')
-  clf_rf <- readRDS('iris_clf_rf.rds')
+  clf_rf <- readRDS('model/iris_clf_rf.rds')
 }
 
 # Predict
