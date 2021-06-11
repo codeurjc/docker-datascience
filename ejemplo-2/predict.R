@@ -4,10 +4,10 @@ library(randomForest)
 args <- commandArgs(T)
 
 input <- data.frame(
-  Sepal.Length = args[1], 
-  Sepal.Width = args[2], 
-  Petal.Length = args[3], 
-  Petal.Width = args[4]
+  Sepal.Length = as.numeric(args[1]), 
+  Sepal.Width = as.numeric(args[2]), 
+  Petal.Length = as.numeric(args[3]), 
+  Petal.Width = as.numeric(args[4])
 )
 
 # Train the model if it does not exist previously
