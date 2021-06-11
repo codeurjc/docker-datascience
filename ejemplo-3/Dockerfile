@@ -15,4 +15,4 @@ COPY predict.py /usr/src/myscript/
 
 # Comando que se ejecuta cuando se arranque el contenedor
 ENTRYPOINT [ "python", "predict.py" ]
-CMD [ "--input", "1", "2", "3", "4" ]
+CMD [ "--input", "5.1", "3.5", "1.4", "0.2" ]

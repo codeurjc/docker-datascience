@@ -15,4 +15,4 @@ COPY predict.R /usr/src/myscript/
 
 # Comando que se ejecuta cuando se arranque el contenedor
 ENTRYPOINT [ "Rscript", "predict.R" ]
-CMD [ "1", "2", "3", "4" ]
+CMD [ "5.1", "3.5", "1.4", "0.2" ]
