@@ -8,12 +8,12 @@ trucks <- c(2, 5, 4, 5, 12)
 message("Creating plot using the cars and trucks arrays...")
 
 # Create output folder
-if (!dir.exists("/output")) {
-    dir.create("/output")
+if (!dir.exists("/tmp/output")) {
+    dir.create("/tmp/output")
 }
 
 # Open a png file
-png(filename="/output/plot.png")
+png(filename="/tmp/output/plot.png")
 
 # Create a plot
 plot(cars, type="o", col="blue", ylim=c(0,12))

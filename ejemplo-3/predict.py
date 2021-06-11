@@ -17,7 +17,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # Train the model if it does not exist previously
-    if not os.path.exists('/model/iris_clf_rf.pkl'):
+    if not os.path.exists('/tmp/model/iris_clf_rf.pkl'):
         print('Training model...')
         X, y = load_iris(return_X_y=True)
 
@@ -25,15 +25,15 @@ if __name__ == '__main__':
         clf_rf.fit(X, y)
 
         # Create model folder if doesn't exist
-        if not os.path.isdir('/model'):
-            os.mkdir("/model")
+        if not os.path.isdir('/tmp/model'):
+            os.mkdir("/tmp/model")
 
-        joblib.dump(clf_rf, '/model/iris_clf_rf.pkl')
+        joblib.dump(clf_rf, '/tmp/model/iris_clf_rf.pkl')
 
     # Load the trained model
     else:
         print('Reading model...')
-        clf_rf = joblib.load('/model/iris_clf_rf.pkl')
+        clf_rf = joblib.load('/tmp/model/iris_clf_rf.pkl')
 
     # Predict
     y_pred = clf_rf.predict(args.input)
