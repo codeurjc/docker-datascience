@@ -1,2 +1,3 @@
 .venv
 model/
+iris_clf_rf.pkl
