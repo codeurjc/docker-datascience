@@ -1,5 +1,5 @@
 # Selecciona la imagen base
-FROM python:3.9.5-slim-buster
+FROM python:3.11.1-slim-buster
 
 # Definimos el directorio de trabajo en /usr/src/myscript/
 WORKDIR /usr/src/myscript/

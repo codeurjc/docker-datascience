@@ -1,5 +1,5 @@
 # Selecciona la imagen base
-FROM r-base:4.1.0
+FROM r-base:4.2.2
 
 # Definimos el directorio de trabajo en /usr/src/myscript/
 WORKDIR /usr/src/myscript/
