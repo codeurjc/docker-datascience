@@ -4,7 +4,11 @@
 		"dockerfile": "Dockerfile"
 	},
 	"overrideCommand": false,
-	
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"username": "jovyan"
+		}
+	},
 	// Forward Jupyter port locally, mark required
 	"forwardPorts": [8888],
 	"portsAttributes": {

@@ -2,17 +2,13 @@
 
 FROM jupyter/datascience-notebook
 
-# We want to run common-debian.sh from here:
-# https://github.com/microsoft/vscode-dev-containers/tree/main/script-library#development-container-scripts
-# But that script assumes that the main non-root user (in this case jovyan)
+# Common utils devcontainers feature assumes that the main non-root user (in this case jovyan)
 # is in a group with the same name (in this case jovyan).  So we must first make that so.
-COPY library-scripts/common-debian.sh /tmp/library-scripts/
 USER root
 RUN apt-get update \
  && groupadd jovyan \
  && usermod -g jovyan -a -G users jovyan \
- && bash /tmp/library-scripts/common-debian.sh \
- && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
+ && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
 # [Optional] If your pip requirements rarely change, uncomment this section to add them to the image.
 # COPY requirements.txt /tmp/pip-tmp/
